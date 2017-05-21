@@ -1,7 +1,18 @@
 var todoList = {
   todos: [],
   displayTodos: function (){
-    console.log('MyTodos:', this.todos);
+    if (this.todos.length === 0){
+      console.log("Wooohoo Your Todo List is Empty");
+    }else{
+      console.log('MyTodos:');
+      for(i= 0; i < this.todos.length; i++){
+        if(this.todos[i].completed === true){
+          console.log('(x)', this.todos[i].todoText);
+        }else{
+          console.log('()', this.todos[i].todoText);
+        }
+      }
+    }
   },
   addTodos: function(todoText){
     this.todos.push({
